@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New User</title>
+    <style>.header {
+      text-align: center;
+      background-color: aqua;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .navbar {
+      background-color: black;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    .card-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .card-text {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .card-footer {
+      text-align: center;
+    }</style>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Show buzz</h1>
+  </header>
+<h1>Confirm Deletion</h1>
+<p>Are you sure you want to delete the venue "{{ venues.name }}"?</p>
+<form action="{{ url_for('delete_venue', venue_id=venues.id) }}" method="POST">
+    <button type="submit">Yes, delete it</button>
+    <a href="{{ url_for('Admin_dashboard') }}">No, cancel</a>
+</form>
+</body>
+</html>

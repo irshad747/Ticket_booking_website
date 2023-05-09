@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Who are You</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-+WdO/kpV7zAkouJvPxr7e3qdwViCnc7Dx/j6YKgBf1Q6UzFe6UvxM6gxlR7Nl2DxmvHk+Pz+jvZCK5kt5z/1bg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<style>
+		.header {
+			text-align: center;
+			background-color: aqua;
+			padding: 20px;
+			margin-bottom: 20px;
+		}
+
+		.navbar {
+			background-color: black;
+		}
+
+		.card {
+			margin-bottom: 20px;
+			background-color: #f7f7f7;
+			border: none;
+			border-radius: 10px;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+		}
+
+		.card-title {
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+
+		.card-text {
+			font-size: 14px;
+			margin-bottom: 10px;
+		}
+
+		.card-footer {
+			text-align: center;
+		}
+
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin-top: 20px;
+		}
+
+		input[type="submit"] {
+			padding: 10px 20px;
+			margin: 10px;
+			border: none;
+			border-radius: 5px;
+			background-color: #007bff;
+			color: white;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		<h1>Show buzz</h1>
+	</header>
+	<h1>Select User or Admin</h1>
+	<form method="GET" action="{{ url_for('User_login') }}">
+		<input type="submit" value="User">
+	</form>
+	<form method="GET" action="{{ url_for('Admin') }}">
+		<input type="submit" value="Admin">
+	</form>
+</body>
+</html>
+

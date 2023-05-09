@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New User</title>
+    <style>.header {
+      text-align: center;
+      background-color: aqua;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .navbar {
+      background-color: black;
+    }
+    .card {
+      margin-bottom: 20px;
+    }
+    .card-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    .card-text {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    .card-footer {
+      text-align: center;
+    }</style>
+</head>
+<body>
+
+  <header class="header">
+    <h1>Show buzz</h1>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="{{ url_for('Admin_dashboard') }}">Admin Dashboard</a>
+    </nav>
+    <form action="{{ url_for('add_show',venue_id=venues.id) }}" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter name of the show" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="Time">Time</label>
+          <input type="text" class="form-control" id="Time" placeholder="00.00 PM/AM" name="Time" required>
+        </div>
+        <div class="form-group">
+          <p>Venue: <input type="text" name="venue_name" value="{{ venue_name }}" readonly></p>
+          </div>
+          <div class="form-group"></div>
+          <label for="Available_seats">Available_seats({{seats_left}}):</label>
+          <input type="number" class="form-control" id="Available_seats" placeholder="seats to be reserved" name="Available_seats" min="0" max="{{ seats_left }}" required>
+        </div>
+          <div class="form-group">
+            <label for="Ratings">Ratings</label>
+            <input type="text" class="form-control" id="Ratings" placeholder="On the scale of 1-10" name="Ratings" required>
+          </div>
+          <div class="form-group">
+            <label for="Tags">Tags</label>
+            <input type="text" class="form-control" id="Tags" placeholder="Genre" name="Tags" required>
+          </div>
+          <div class="form-group">
+            <label for="price">price</label>
+            <input type="text" class="form-control" id="price" name="price" required> RS
+          </div>
+          <div class="form-group">
+            <label for="Date">Date</label>
+            <input type="date" class="form-control" id="Date" placeholder="Date Month Year" name="Date" required>
+          </div>
+          <div class="form-group">
+            <label for="Synopsis">Synopsis</label>
+            <input type="text" class="form-control" id="synopsis" placeholder="Synopsis" name="Synopsis" required>
+          </div>
+          <div class="form-group">
+            <label for="Description">Description</label>
+            <input type="text" class="form-control" id="Description" placeholder="Description" name="Description" required>
+          </div>
+
+
+        <button type="submit" class="btn btn-primary">Add Show</button>
+      </form>
+</body>
+</html>
+

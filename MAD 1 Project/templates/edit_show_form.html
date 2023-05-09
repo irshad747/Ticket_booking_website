@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New User</title>
+</head>
+<body>
+  <header class="header">
+    <h1>Show buzz</h1>
+  </header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="{{ url_for('Admin_dashboard') }}">Admin Dashboard</a>
+  </nav>
+  
+    <form action="{{ url_for('edit_show',show_id=show_id) }}" method="POST">
+        <div class="form-group">
+          <label for="name">name</label>
+          <input type="text" class="form-control" id="name" name="name" value="{{shows.name}}" required>
+        </div>
+        <div class="form-group">
+          <label for="Time">Time</label>
+          <input type="text" class="form-control" id="Time" name="Time" value="{{shows.time}}" required>
+        </div>
+        <div class="form-group">
+            <label for="Venue_name">Venue_name</label>
+            <input type="text" class="form-control" id="venue_name" name="venue_name" value="{{venue_name}}" required>
+          </div>
+          <div class="form-group">
+            <label for="Available_seats">Available_seats</label>
+            <input type="text" class="form-control" id="Available_seats" name="Available_seats" value="{{shows.available_seats}}" required>
+          </div>
+          <div class="form-group">
+            <label for="Ratings">Ratings</label>
+            <input type="text" class="form-control" id="Ratings" name="Ratings" value="{{shows.rating}}" required>
+          </div>
+          <div class="form-group">
+            <label for="Tags">Tags</label>
+            <input type="text" class="form-control" id="Tags" name="Tags" value="{{shows.tag}}" required>
+          </div>
+          <div class="form-group">
+            <label for="price">price (in Rs)</label>
+            <input type="text" class="form-control" id="price" name="price" value="{{shows.price}}" required>
+          </div>
+          <div class="form-group">
+            <label for="Date">Date</label>
+            <input type="date" class="form-control" id="Date" name="Date" value="{{shows.Date}}" required>
+          </div>
+          <div class="form-group">
+            <label for="Synopsis">Synopsis</label>
+            <input type="text" class="form-control" id="Synopsis" name="Synopsis" value="{{shows.Synopsis}}" required>
+          </div>
+          <div class="form-group">
+            <label for="Description">Description</label>
+            <input type="text" class="form-control" id="Description" name="Description" value="{{shows.Description}}" required>
+          </div>
+
+        <button type="submit" class="btn btn-primary">edit Show</button>
+      </form>
+</body>
+</html>

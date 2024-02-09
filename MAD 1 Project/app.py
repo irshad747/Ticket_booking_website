@@ -445,6 +445,7 @@ def delete_show_confirmation(show_id):
     if response.status_code == 200:
       show_to_delete = response.json().get('show')
     return render_template('delete_show_confirmation.html', shows=show_to_delete)
+    print ("hello")
 
 @app.route('/Admin/<int:show_id>/delete_show_confirmed', methods=['POST'])
 def delete_show(show_id):
